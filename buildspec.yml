@@ -1,7 +1,7 @@
 version: 0.1
 environment_variables:
     plaintext:
-        S3_BUCKET: "hello-tomtom.TomMorin.com"
+        S3_BUCKET: "hello-tomtom.tommorin.com"
 phases:
     install:
         commands:
@@ -14,7 +14,7 @@ phases:
             - ng build --prod
     post_build:
          commands:
-            - aws s3 cp dist/hello2-tomtom s3://${S3_BUCKET} --recursive
+            - aws s3 cp dist/hello-tomtom s3://${S3_BUCKET} --recursive
             - echo Build completed on `date`
 artifacts:
     files:
